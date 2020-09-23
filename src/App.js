@@ -1,24 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Game from './components/game/game.js';
+import homeTeamMascot from './assets/images/Hazelwood Husky.jpg';
+import visitingTeamMascot from './assets/images/Parker Penguin.jpg';
 
 function App() {
+  const huskyTeam = {
+    name: 'Hazelwood Huskies',
+    logoSrc: homeTeamMascot
+  }
+
+  const penguinTeam = {
+    name: 'Parker Penguins',
+    logoSrc: visitingTeamMascot
+  }
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Game 
+        venue="Husky Gym"
+        homeTeam={huskyTeam}
+        visitingTeam={penguinTeam}
+      />
     </div>
   );
 }
